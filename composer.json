@@ -1,0 +1,98 @@
+{
+    "name": "opendesa/opendk",
+    "description": "OpenDK adalah aplikasi yang bisa digunakan oleh Pemerintah Kecamatan di Seluruh Indonesia",
+    "license": "GPL-3.0-or-later",
+    "type": "project",
+    "keywords": [
+        "OpenDK",
+        "Dashboard Kecamatan"
+    ],
+    "homepage": "https://opendk.my.id/",
+    "require": {
+        "php": "^8.0.2",
+        "bensampo/laravel-enum": "^6.0",
+        "cocur/slugify": "4.2.0",
+        "cviebrock/eloquent-sluggable": "^9.0",
+        "doctrine/dbal": "^2.9",
+        "guzzlehttp/guzzle": "^7.2",
+        "jaybizzle/crawler-detect": "1.*",
+        "laracasts/flash": "^3.0",
+        "laravel/framework": "^9.19",
+        "laravel/helpers": "^1.3",
+        "laravel/ui": "^3.0",
+        "laravelcollective/html": "^6.2",
+        "maatwebsite/excel": "^3.1",
+        "mews/captcha": "^3.2",
+        "proengsoft/laravel-jsvalidation": "^4.4",
+        "rachidlaasri/laravel-installer": "^4.1",
+        "rap2hpoutre/laravel-log-viewer": "^2.0",
+        "sentry/sentry-laravel": "^3.8",
+        "spatie/laravel-permission": "^5.5",
+        "stevebauman/purify": "^4.0",
+        "tymon/jwt-auth": "^1.0",
+        "unisharp/laravel-filemanager": "^2.6",
+        "willvincent/feeds": "^2.2",
+        "yajra/laravel-datatables-oracle": "~9."
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.6",
+        "beyondcode/laravel-query-detector": "^1.5",
+        "fakerphp/faker": "^1.9.1",
+        "filp/whoops": "~2.0",
+        "friendsofphp/php-cs-fixer": "^3.9",
+        "laravel/tinker": "^2.7",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "helpers/general_helper.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/thanks": true,
+            "php-http/discovery": true
+        },
+        "platform": {
+            "php": "8.0.30"
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
