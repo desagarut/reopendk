@@ -30,8 +30,6 @@ class ArtikelRequest extends FormRequest
             'isi'       => 'required',
             'status'    => 'required',
             'gambar'    => 'image|mimes:jpg,jpeg,png|max:2048|valid_file',
-            'url_video'     =>  'string'
-            //  'gambar' => $gambarRule . 'image|mimes:jpg,jpeg,png|max:2048|valid_file',
         ];
     }
 }

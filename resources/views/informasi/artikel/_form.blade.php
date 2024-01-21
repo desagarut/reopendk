@@ -41,13 +41,12 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="gambar">Video Youtube</label>
+                    <label class="control-label" for="url_video">Video Youtube</label>
                     <iframe width="100%" height="200" src="https://www.youtube.com/embed/{{ $artikel->url_video ?? null }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     {!! Form::text('url_video', null, ['class' => 'form-control', 'placeholder' => 'Kode Embeded Youtube']) !!}
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="gambar">Status</label>
-
+                    <label class="control-label" for="status">Status</label>
                     {!! Form::select('status', ['0' => 'Tidak Aktif', '1' => 'Aktif'], null, ['class' => 'form-control']) !!}
                     @if ($errors->has('status'))
                     <span class="help-block" style="color:red">{{ $errors->first('status') }}</span>
