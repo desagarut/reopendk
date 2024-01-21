@@ -62,15 +62,15 @@
             </div>
         </div>
         <div class="box box-primary">
-            <div class="box-title">URL Youtube</div>
             <div class="box-body">
                 <div class="col-md-12">
+                <h3>URL Youtube</h3>
+
                     <iframe width="100%" height="200" src="https://www.youtube.com/embed/{{ $potensi->url_video ?? null }}" title="Heavily modified Suzuki Omni in Dubai - 1/1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     {!! Form::text('url_video', null, ['class' => 'form-control', 'placeholder' => 'Kode Embeded Youtube']) !!}
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

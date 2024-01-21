@@ -40,7 +40,11 @@
                     <span class="help-block" style="color:red">{{ $errors->artikel('gambar') }}</span>
                     @endif
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label" for="gambar">Video Youtube</label>
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/{{ $artikel->url_video ?? null }}" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    {!! Form::text('url_video', null, ['class' => 'form-control', 'placeholder' => 'Kode Embeded Youtube']) !!}
+                </div>
                 <div class="form-group">
                     <label class="control-label" for="gambar">Status</label>
 
@@ -50,7 +54,6 @@
                     @endif
                 </div>
             </div>
-
             <div class="box-footer">
                 <button type="reset" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Batal</button>
                 <button type="submit" class="btn btn-primary btn-sm pull-right"><i class="fa fa-save"></i> Simpan</button>

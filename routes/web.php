@@ -170,6 +170,8 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
             });
 
             Route::get('faq', 'WebFaqController@index')->name('faq');
+            Route::get('musrenbang', 'WebMusrenbangController@index')->name('musrenbang');
+
         });
         Route::get('agenda-kegiatan/{slug}', [EventController::class, 'show'])->name('event.show');
 
@@ -601,7 +603,7 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
          */
         Route::group(['prefix' => 'setting'], function () {
             // User Management
-            Route::group(['prefix' => 'user', 'controller' => UserController::class,'middleware' => ['role:super-admin|administrator-website']], function () {
+            Route::group(['prefix' => 'user', 'controller' => UserController::class, 'middleware' => ['role:super-admin|administrator-website']], function () {
                 Route::get('/', 'index')->name('setting.user.index');
                 Route::get('getdata', 'getDataUser')->name('setting.user.getdata');
                 Route::get('create', 'create')->name('setting.user.create');
