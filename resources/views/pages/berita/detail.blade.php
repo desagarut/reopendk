@@ -15,6 +15,7 @@
             <h3 style="margin-top: 5px; text-align: justify;"><b>{{ $artikel->judul }}</b></h3>
             <p><i class="fa fa-calendar"></i>&ensp;{{ format_date($artikel->created_at) }}&ensp;|&ensp;<i class="fa fa-user"></i>&ensp;Administrator</p>
             <p>{!! $artikel->isi !!}</p>
+            <p><iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ $artikel->url_video ?? null }}" title="{{ $artikel->judul }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
             <hr />
             <div style="margin-top:-10px" class="sharethis-inline-share-buttons"></div>
         </div>

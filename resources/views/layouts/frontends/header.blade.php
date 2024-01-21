@@ -85,6 +85,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('faq') }}">FAQ</a></li>
+                    <!--<li><a href="{{ route('musrenbang') }}">MUSRENBANG</a></li>-->
                     @if (auth()->guest())
                     <li><a href="{{ route('login') }}">LOGIN<span class="sr-only">(current)</span></a></li>
                     @else

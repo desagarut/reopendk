@@ -27,6 +27,7 @@
                         <tr>
                             <th style="max-width: 150px;">Aksi</th>
                             <th>Gambar</th>
+                            <th>Kode Video</th>
                             <th>Judul</th>
                             <th style="max-width: 100px;">Status</th>
                             <th>Tanggal Terbit</th>
@@ -58,6 +59,13 @@
                 {
                     data: 'gambar',
                     name: 'gambar',
+                    class: 'text-center',
+                    searchable: false,
+                    orderable: false
+                },
+                {
+                    data: 'url_video',
+                    name: 'url_video',
                     class: 'text-center',
                     searchable: false,
                     orderable: false
