@@ -1,54 +1,80 @@
-<div class="form-group">
-    <label for="kategori_id" class="control-label col-md-4 col-sm-3 col-xs-12">Kategori<span class="required">*</span></label>
-    <div class="col-md-5 col-sm-5 col-xs-12">
-        {!! Form::select('kategori_id', \App\Models\TipePotensi::pluck('nama_kategori', 'id'), null, ['placeholder' => '-Pilih', 'class' => 'form-control', 'id' => 'kategori_id', 'required' => true]) !!}
-    </div>
-</div>
-<div class="form-group">
-    <label class="control-label col-md-4 col-sm-3 col-xs-12">Nama Potensi <span class="required">*</span></label>
-    <div class="col-md-5 col-sm-5 col-xs-12">
-        {!! Form::text('nama_potensi', null, ['class' => 'form-control', 'placeholder' => 'Nama Potensi', 'required']) !!}
-    </div>
-</div>
-<div class="form-group">
-    <label class="control-label col-md-4 col-sm-3 col-xs-12" for="deskripsi">Deskripsi</label>
-    <div class="col-md-5 col-sm-5 col-xs-12">
-        {!! Form::textarea('deskripsi', null, ['class' => 'my-editor', 'placeholder' => 'Deskripsi', 'style' => 'width: 100%; height: 750px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;']) !!}
-        @if ($errors->has('deskripsi'))
-        <span class="help-block" style="color:red">{{ $errors->first('deskripsi') }}</span>
-        @endif
-    </div>
-</div>
-<!--
-<div class="form-group">
-    <label class="control-label col-md-4 col-sm-3 col-xs-12">Deskripsi <span class="required">*</span></label>
-    <div class="col-md-5 col-sm-5 col-xs-12">
-        {!! Form::textArea('deskripsi', null, ['class' => 'form-control', 'placeholder' => 'Deskripsi', 'required']) !!}
-    </div>
-</div>
--->
-<div class="form-group">
-    <label class="control-label col-md-4 col-sm-3 col-xs-12">Lokasi <span class="required">*</span></label>
-    <div class="col-md-5 col-sm-5 col-xs-12">
-        {!! Form::text('lokasi', null, ['class' => 'form-control', 'placeholder' => 'Lokasi', 'required']) !!}
-    </div>
-</div>
-<div class="form-group">
-    <label class="control-label col-md-4 col-sm-3 col-xs-12">Gambar <span class="required">*</span></label>
-    <div class="col-md-5 col-sm-5 col-xs-12">
-        <input type="file" name="file_gambar" id="file_gambar" class="form-control" required accept="image/*">
-        <br>
-        <img src="http://placehold.it/1000x600" id="showgambar" style="max-width:400px;max-height:250px;float:left;" />
-    </div>
-</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <a href="{{ route('informasi.potensi.index') }}"><button type="button" class="btn btn-info btn-sm text-right"><i class="fa fa-arrow-circle-left"></i> Kembali</button></a>
+            </div>
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="kategori_id" class="control-label col-md-3 col-sm-3 col-xs-12">Kategori<span class="required">*</span></label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {!! Form::select('kategori_id', \App\Models\TipePotensi::pluck('nama_kategori', 'id'), null, ['placeholder' => '-Pilih', 'class' => 'form-control', 'id' => 'kategori_id', 'required' => true]) !!}
+                    </div>
+                </div>
 
-<div class="box-footer">
-                <button type="reset" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Batal</button>
-                <button type="submit" class="btn btn-primary btn-sm pull-right"><i class="fa fa-save"></i> Simpan</button>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Potensi <span class="required">*</span></label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {!! Form::text('nama_potensi', null, ['class' => 'form-control', 'placeholder' => 'Nama Potensi', 'required']) !!}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="deskripsi">Deskripsi</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {!! Form::textarea('deskripsi', null, ['class' => 'my-editor', 'placeholder' => 'Deskripsi', 'style' => 'width: 100%; height: 750px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;']) !!}
+                        @if ($errors->has('deskripsi'))
+                        <span class="help-block" style="color:red">{{ $errors->first('deskripsi') }}</span>
+                        @endif
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Lokasi <span class="required">*</span></label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        {!! Form::text('lokasi', null, ['class' => 'form-control', 'placeholder' => 'Lokasi', 'required']) !!}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="control-label" for="file_gambar">Gambar</label>
+                        <img src="{{ is_img($potensi->file_gambar ?? null) }}" id="showgambar" style="width:100%; max-height:250px; float:left;" />
+                        {!! Form::file('file_gambar', ['placeholder' => 'Gambar', 'class' => 'form-control', 'id' => 'file-potensi', 'accept' => 'jpg,jpeg,png']) !!}
+                        @if ($errors->has('file_gambar'))
+                        <span class="help-block" style="color:red">{{ $errors->potensi('file_gambar') }}</span>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="col-md-12">
+                    <h3>URL Youtube</h3>
+
+                    <iframe width="100%" height="200" src="https://www.youtube.com/embed/{{ $potensi->url_video ?? null }}" title="Heavily modified Suzuki Omni in Dubai - 1/1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    {!! Form::text('url_video', null, ['class' => 'form-control', 'placeholder' => 'Kode Embeded Youtube']) !!}
+                </div>
+            </div>
+            <div class="box-footer">
+                <div class="pull-right">
+                    <div class="control-group">
+                        <a href="{{ route('informasi.potensi.index') }}">
+                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i>&nbsp; Batal</button>
+                        </a>
+                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save"></i>&nbsp; Simpan</button>
+                    </div>
+                </div>
             </div>
 
+        </div>
+    </div>
+</div>
 
-<div class="ln_solid"></div>
 <!--
 @include('partials.asset_jqueryvalidation')
 
@@ -56,6 +82,7 @@
 {!! JsValidator::formRequest('App\Http\Requests\PotensiRequest', '#form-potensi') !!}
 @endpush
 -->
+
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.11/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
@@ -81,13 +108,13 @@
                     reader.readAsDataURL(input.files[0]);
                 } else { //no
                     //warning
-                    $("#file-gambar").val('');
+                    $("#file-potensi").val('');
                     alert('File tersebut tidak diperbolehkan.');
                 }
             }
         }
 
-        $("#file-gambar").change(function() {
+        $("#file-potensi").change(function() {
             readURL(this);
         });
     });

@@ -16,9 +16,7 @@
 <section class="content container-fluid">
     <div class="row">
         <div class="col-md-12">
-            <div class="box box-primary">
-
-                <div class="box-body">
+            
                     <!-- form start -->
                     {!! Form::open(['route' => 'informasi.potensi.store', 'method' => 'post', 'files' => true, 'id' => 'form-potensi', 'class' => 'form-horizontal form-label-left']) !!}
 
@@ -36,16 +34,6 @@
                     @include('flash::message')
                     @include('informasi.potensi.form_create')
 
-                </div>
-                <div class="box-footer">
-                    <div class="pull-right">
-                        <div class="control-group">
-                            <a href="{{ route('informasi.potensi.index') }}">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i>&nbsp; Batal</button>
-                            </a>
-                            <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-save"></i>&nbsp; Simpan</button>
-                        </div>
-                    </div>
                 </div>
                 {!! Form::close() !!}
             </div>
