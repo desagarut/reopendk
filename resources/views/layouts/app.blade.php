@@ -32,6 +32,8 @@
     <meta name="twitter:image" content="{{ is_img($page_image ?? '') }}?auto=format&amp;fit=max&amp;w=1200">
     <link rel="alternate" href="/feed.xml" type="application/atom+xml" data-title="{{ Request::url() }}">
 
+    <meta name="google-site-verification" content="q4xl2JhkW0bbRxGADl3_FQiW0AiuoVs51O9IRRpM27I" />
+
     <link rel="icon" type="image/png" href="{{ is_logo($profil->file_logo) }}" />
     <link rel="mask-icon" href="{{ is_logo($profil->file_logo) }}" color="#5bbad5">
     <link rel="manifest" href="{{ asset('manifest.webmanifest') }}" />
