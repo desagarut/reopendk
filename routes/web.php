@@ -749,4 +749,11 @@ Route::group(['middleware' => ['installed', 'xss_sanitization']], function () {
             ->where('kk_level', 1)
             ->paginate(10);
     });
+
+    // Routes for google ads
+    Route::get('/ads.txt', function () {
+        $content = view('ads');
+        return response($content, 200)
+            ->header('content-Type', 'text');
+    });
 });
